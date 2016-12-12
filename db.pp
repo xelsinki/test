@@ -24,7 +24,7 @@ class wordpress::db {
         
             # Grant privileges to the user
             grants => {
-              "${wordpress::conf:db_user_host_db}" => {
+              "${wordpress::conf::db_user_host_db}" => {
                 ensure => 'present',
                 option => ['GRANT'],
                 privileges =>['ALL'],
