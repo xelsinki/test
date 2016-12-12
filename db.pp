@@ -9,7 +9,7 @@ class wordpress::db {
         # Create the database
         databases => {
           "${wordpress::conf::db_name}" => {
-              ensure => 'persent',
+              ensure => 'present',
               charset => 'utf8'
                }
          },
@@ -17,7 +17,7 @@ class wordpress::db {
           # Create the user
           users => {
             "${wordpress::conf::db_user_host}" => {
-              ensure => 'persent',
+              ensure => 'present',
               password_hash => mysql_password("${wordpress::conf::db_user_password}")
                 }
           },
@@ -25,7 +25,7 @@ class wordpress::db {
             # Grant privileges to the user
             grants => {
               "${wordpress::conf:db_user_host_db}" => {
-                ensure => 'persent',
+                ensure => 'present',
                 option => ['GRANT'],
                 privileges =>['ALL'],
                 table => "${wordpress::conf::db_name}.*",
