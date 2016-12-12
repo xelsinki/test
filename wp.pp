@@ -10,7 +10,7 @@ class wordpress::wp {
        cwd => "/tmp",
        command => "tar -xvzf latest.tar.gz",
        require => File['/tmp/latest.tar.gz'],
-       path => ('/bin'],
+       path => ['/bin'],
     }
     
     # Copy to /var/www/
