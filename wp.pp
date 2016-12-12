@@ -24,6 +24,6 @@ class wordpress::wp {
     file { '/var/www/wp-config.php':
          ensure => present,
          require => Exec['copy'],
-         content => template("wordpress/wp-config-sample.php")
+         content => template("wordpress/wp-config-sample.php.erb")
       }
  }
