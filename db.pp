@@ -5,6 +5,8 @@ class wordpress::db {
     
         # Set the root password
         root_password => $wordpress::conf::root_password,
+        #Tämä rivi piti lisätä että saisi toimimaan
+        remove_default_accounts => true,
 
         # Create the database
         databases => {
